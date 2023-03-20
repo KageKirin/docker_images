@@ -1,4 +1,31 @@
-# Docker images
+# Docker images (FORK)
+
+This is a fork of [catthehacker/docker_images](https://github.com/catthehacker/docker_images).
+
+I'm using the image for a couple of personal projects,
+and figured that instead of installing the tools I need on every CI/CD run,
+I'd rather have them part of the container image.
+
+So basically, I ported the time consuming installation part from my CI/CD scripts to this environment.
+
+## Changes with regards to original
+
+* removed `base-image`
+* removed all specific images from being created, except `custom` which encompasses the other ones
+* added other tools:
+  * .NET (7.0)
+  * Clang-16
+  * Zig
+  * Ninja
+  * Google Cloud
+  * a few very specific tools of my own:
+    * [metagen](https://github.com/kagekirin/metagen-js),
+    * [csproj-version](https://github.com/kagekirin/csproj-version),
+    * [csproj-dependency-version](https://github.com/kagekirin/csproj-dependency-version),
+    * [node-package-version](https://github.com/kagekirin/node-package-version),
+    * [unity-bundle-version](https://github.com/kagekirin/unity-bundle-version)
+
+## Original README below
 
 [![Scheduled build (Ubuntu)](https://github.com/catthehacker/docker_images/actions/workflows/build-ubuntu.yml/badge.svg?event=schedule)](https://github.com/catthehacker/docker_images/actions/workflows/build-ubuntu.yml)
 [![On-demand build (Ubuntu)](https://github.com/catthehacker/docker_images/actions/workflows/build-ubuntu.yml/badge.svg?event=workflow_dispatch)](https://github.com/catthehacker/docker_images/actions/workflows/build-ubuntu.yml)
