@@ -18,7 +18,7 @@ on:
 env:
   IMAGE_LABEL_OWNER: ${{ github.repository_owner }}
   IMAGE_LABEL_REPO: ${{ github.repository }}
-  SLUG: ${{ github.repository_owner }}/${{ github.repository }}/ubuntu
+  SLUG: ${{ github.repository }}/ubuntu
   DISTRO: ubuntu
   NODE: '12 16'
   BUILD_REF: ${{ github.sha }}
