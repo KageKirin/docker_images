@@ -2,9 +2,9 @@ param(
     [Parameter(ValueFromPipeline)]
     [string]$progress,
     [Parameter(ValueFromPipeline)]
-    [string]$owner = "${env:IMAGE_LABEL_OWNER}",
+    [string]$owner = "${env:IMAGE_LABEL_OWNER}".ToLower(),
     [Parameter(ValueFromPipeline)]
-    [string]$repository = "${env:IMAGE_LABEL_REPO}",
+    [string]$repository = "${env:IMAGE_LABEL_REPO}".ToLower(),
     [Parameter(ValueFromPipeline)]
     [string]$slug = 'kagekirin/ubuntu',
     [Parameter(ValueFromPipeline)]
@@ -24,15 +24,15 @@ param(
     [Parameter(ValueFromPipeline)]
     [string]$platforms = "${env:PLATFORMS}",
     [Parameter(ValueFromPipeline)]
-    [string]$build_tag = "${env:BUILD_TAG}",
+    [string]$build_tag = "${env:BUILD_TAG}".ToLower(),
     [Parameter(ValueFromPipeline)]
-    [string]$build_tag_version = "${env:BUILD_TAG_VERSION}",
+    [string]$build_tag_version = "${env:BUILD_TAG_VERSION}".ToLower(),
     [Parameter(ValueFromPipeline)]
     [string]$build_ref = "${env:BUILD_REF}",
     [Parameter(ValueFromPipeline)]
-    [string]$from_image = "${env:FROM_IMAGE}",
+    [string]$from_image = "${env:FROM_IMAGE}".ToLower(),
     [Parameter(ValueFromPipeline)]
-    [string]$from_tag = "${env:FROM_TAG}",
+    [string]$from_tag = "${env:FROM_TAG}".ToLower(),
     [Parameter(ValueFromPipeline)]
     [switch]$push
 )
@@ -112,7 +112,7 @@ if($push -ne $true) {
    $arguments += @("--dry-run")
 }
 
-$tags.Count -ne 0 ? ($tags | ForEach-Object { $arguments += @("--tag=$_") }) : ""
+$tags.Count -ne 0 ? ($tags | ForEach-Object { $arguments += @("--tag=$_").ToLower() }) : ""
 
 $arguments += $tag -ne '' ? @("--tag=$tag") : @()
 
