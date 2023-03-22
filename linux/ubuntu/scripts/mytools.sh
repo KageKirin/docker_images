@@ -83,10 +83,12 @@ zig targets
 printf "\n\t🐋 Installing .NET 🐋\t\n"
 curl -LO https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh
 cat ./dotnet-install.sh
-bash ./dotnet-install.sh --channel STS
-bash ./dotnet-install.sh --channel LTS
+bash ./dotnet-install.sh --install-dir /dotnet --no-path --channel STS
+bash ./dotnet-install.sh --install-dir /dotnet --no-path --channel LTS
+rm ./dotnet-install.sh
+export PATH=$PATH:/dotnet
+export DOTNET_ROOT="$(dirname $(which dotnet))"
 echo $PATH
-export PATH=$PATH:/root/.dotnet
 which dotnet
 dotnet --version
 dotnet --info
