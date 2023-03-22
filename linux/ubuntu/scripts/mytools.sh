@@ -65,10 +65,16 @@ apt-get install -y clang-format clang-tidy clang-tools clang clangd
 
 printf "\n\t🐋 Installing Ninja 🐋\t\n"
 curl -LO https://github.com/ninja-build/ninja/releases/download/v1.10.2/ninja-linux.zip
-unzip -d /ninja-build ninja-linux.zip
-ls /ninja-build
-export PATH=$PATH:/ninja-build
+unzip -d /opt/hostedtoolcache/ninja ninja-linux.zip
+rm ninja-linux.zip
+export NINJA_HOME=/opt/hostedtoolcache/ninja
+export PATH=$PATH:$NINJA_HOME
+{
+  echo "NINJA_HOME=${NINJA_HOME}"
+  echo "PATH=\$PATH:\$NINJA_HOME"
+} | tee -a /etc/environment
 ninja --version
+printf "\n\t🐋 Installed Ninja 🐋\t\n"
 
 printf "\n\t🐋 Installing Zig 🐋\t\n"
 curl -LO https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.612+8ccb9a6ad.tar.xz
