@@ -77,14 +77,19 @@ ninja --version
 printf "\n\t🐋 Installed Ninja 🐋\t\n"
 
 printf "\n\t🐋 Installing Zig 🐋\t\n"
-curl -LO https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.612+8ccb9a6ad.tar.xz
-tar xf zig-linux-x86_64-0.11.0-dev.612+8ccb9a6ad.tar.xz
-mv zig-linux-x86_64-0.11.0-dev.612+8ccb9a6ad /zig
-ls -alG /zig
-/zig/zig version
-export PATH=$PATH:/zig
+curl -LO https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.2232+84b89d7cf.tar.xz
+tar xf zig-linux-x86_64-0.11.0-dev.2232+84b89d7cf.tar.xz
+mv zig-linux-x86_64-0.11.0-dev.2232+84b89d7cf /opt/hostedtoolcache/zig
+rm zig-linux-x86_64-0.11.0-dev.2232+84b89d7cf.tar.xz
+export ZIG_HOME=/opt/hostedtoolcache/zig
+export PATH=$PATH:$ZIG_HOME
+{
+  echo "ZIG_HOME=${ZIG_HOME}"
+  echo "PATH=\$PATH:\$ZIG_HOME"
+} | tee -a /etc/environment
 zig version
-zig targets
+#zig targets
+printf "\n\t🐋 Installed Zig 🐋\t\n"
 
 printf "\n\t🐋 Installing .NET 🐋\t\n"
 #curl -LO https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh
