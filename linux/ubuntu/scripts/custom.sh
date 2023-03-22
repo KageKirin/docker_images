@@ -38,7 +38,7 @@ scripts=(
   gh
   go
   js
-  rust
+  #rust
   vcpkg
   mytools #keep last
 )
