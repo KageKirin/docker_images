@@ -196,6 +196,7 @@ jobs:
           #- pwsh
           #- rust
           - custom
+          - custom-cpp
     steps:
       - name: Login to GitHub Container Registry
         if: ${{ github.repository_owner == github.actor }}
