@@ -39,7 +39,8 @@ scripts=(
   go
   js
   #rust
-  vcpkg
+  #vcpkg
+  googlecloud
   mytools #keep last
 )
 
