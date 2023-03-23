@@ -197,6 +197,7 @@ jobs:
           #- rust
           - custom
           - custom-cpp
+          - custom-dotnet
     steps:
       - name: Login to GitHub Container Registry
         if: ${{ github.repository_owner == github.actor }}
