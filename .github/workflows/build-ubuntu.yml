@@ -195,6 +195,8 @@ jobs:
           #- js
           #- pwsh
           #- rust
+          #- cplusplus
+          #- dotnet
           - custom
           - custom-cpp
           - custom-dotnet
