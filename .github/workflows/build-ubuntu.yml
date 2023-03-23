@@ -201,6 +201,7 @@ jobs:
           - custom
           - custom-cpp
           - custom-dotnet
+          - custom-unity
     steps:
       - name: Login to GitHub Container Registry
         if: ${{ github.repository_owner == github.actor }}
