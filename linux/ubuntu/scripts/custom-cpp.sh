@@ -40,7 +40,7 @@ scripts=(
   js
   vcpkg
   cplusplus
-  googlecloud
+  #googlecloud
   mytools #keep last
 )
 
