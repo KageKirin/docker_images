@@ -40,7 +40,7 @@ scripts=(
   js
   #rust
   #vcpkg
-  googlecloud
+  #googlecloud
   unity
   mytools #keep last
 )
