@@ -28,3 +28,14 @@ dotnet --info
 #dotnet --list-sdks
 #dotnet --list-runtimes
 printf "\n\t🐋 Installed .NET 🐋\t\n"
+
+printf "\n\t🐋 Installing .NET Tools 🐋\t\n"
+dotnet tool install -g csharpier
+
+export DOTNET_TOOLS_ROOT=/root/.dotnet/tools
+{
+  echo "DOTNET_TOOLS_ROOT=${DOTNET_TOOLS_ROOT}"
+  echo "PATH=\$PATH:\$DOTNET_TOOLS_ROOT"
+} | tee -a /etc/environment
+
+printf "\n\t🐋 Installed .NET Tools 🐋\t\n"
