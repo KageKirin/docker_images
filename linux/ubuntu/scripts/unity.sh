@@ -18,4 +18,12 @@ chmod +x UnitySetup-${UNITY_VERSION}
 ./UnitySetup-${UNITY_VERSION} --unattended --list-components
 yes | ./UnitySetup-${UNITY_VERSION} --unattended --install-location=/opt/hostedtoolcache/unity --components=${COMPONENTS}
 
+rm ./UnitySetup-${UNITY_VERSION}
+export UNITY_HOME=/opt/hostedtoolcache/unity/Editor
+export PATH=$PATH:$UNITY_HOME
+{
+  echo "UNITY_HOME=${UNITY_HOME}"
+  echo "PATH=\$PATH:\$UNITY_HOME"
+} | tee -a /etc/environment
+
 printf "\n\t🐋 Installed Unity 🐋\t\n"
