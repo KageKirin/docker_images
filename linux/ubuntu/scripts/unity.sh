@@ -16,7 +16,7 @@ curl -LO https://download.unity3d.com/download_unity/${CHANGESET}/UnitySetup-${U
 chmod +x UnitySetup-${UNITY_VERSION}
 ./UnitySetup-${UNITY_VERSION} --help
 ./UnitySetup-${UNITY_VERSION} --unattended --list-components
-yes | ./UnitySetup-${UNITY_VERSION} --unattended --install-location=/opt/hostedtoolcache/unity --components=${COMPONENTS}
+yes | ./UnitySetup-${UNITY_VERSION} --unattended --install-location=/opt/hostedtoolcache/unity --components=${COMPONENTS} || echo ""
 
 rm ./UnitySetup-${UNITY_VERSION}
 export UNITY_HOME=/opt/hostedtoolcache/unity/Editor
