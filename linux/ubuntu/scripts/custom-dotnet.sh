@@ -39,7 +39,7 @@ scripts=(
   go
   js
   dotnet
-  googlecloud
+  #googlecloud
   mytools #keep last
 )
 
